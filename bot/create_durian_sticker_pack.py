@@ -46,3 +46,4 @@ if __name__ == '__main__':
     print('Uploading new stickers.')
     upload()
     print('Sending stickers to group.')
+    upload_zip()
