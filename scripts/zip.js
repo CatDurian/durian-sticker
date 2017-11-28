@@ -13,7 +13,7 @@ glob(`${pngPath}/*.png`, (err, files) => {
     for(const fpath of files) {
         zip.file(
             path.basename(fpath).replace("-fs8", ""),
-            fs.readFileSync(fpath, "binary")
+            fs.readFileSync(fpath)
         )
     }
     zip.generateNodeStream({streamFiles:true}).pipe(fs.createWriteStream(zipPath))
