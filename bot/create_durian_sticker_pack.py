@@ -32,7 +32,7 @@ def delete():
 
 
 def upload_zip():
-    file = open(os.path.join(png_path, '../stickers.zip'), 'rb')
+    file = open(os.path.join(png_path, '../sticker.zip'), 'rb')
     robot.sendDocument(
         chat_id='-271832458',
         document=file
