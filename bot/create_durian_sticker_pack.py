@@ -35,7 +35,8 @@ def upload_zip():
     file = open(os.path.join(png_path, '../sticker.zip'), 'rb')
     robot.sendDocument(
         chat_id='-271832458',
-        document=file
+        document=file,
+        timeout=5000
     )
     file.close()
 
