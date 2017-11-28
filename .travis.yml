@@ -1,0 +1,17 @@
+language: python
+python:
+  - "3.6"
+install:
+  - pip install -r requirements.txt
+branches:
+  only:
+  - master
+before_install:
+  - openssl aes-256-cbc -K $encrypted_b873dea67574_key -iv $encrypted_b873dea67574_iv
+    -in bot/token.txt.enc -out bot/token.txt -d
+  - sudo apt-get -qq update
+  - sudo apt-get install -y node pngquant
+script:
+  - npm run pack
+  - cd bot && python create_durian_sticker_pack.py
+
