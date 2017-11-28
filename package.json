@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "build_png": "rimraf png && mkdirp png && node scripts/build_png.js",
-    "compress": "rimraf png-compressed && mkdirp png-compressed && pngquant --speed 1 png/*.png && cpx png/*-fs8.png png-compressed && rimraf png/*-fs8.png",
+    "compress": "rimraf png-compressed && mkdirp png-compressed && pngquant --speed 1 png/*.png && cpx \"png/*-fs8.png\" png-compressed && rimraf png/*-fs8.png",
     "zip": "node scripts/zip.js",
     "pack": "npm run build_png && npm run compress && npm run zip"
   },
