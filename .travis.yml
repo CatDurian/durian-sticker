@@ -17,5 +17,17 @@ script:
   - npm run pack
 
 after_success: 
-  - cd bot && python create_durian_sticker_pack.py
+  - cd bot && python create_durian_sticker_pack.py && cd ..
 
+before_deploy:
+  - npm run site
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  on:
+    branch: master
+  local_dir: png-compressed
+  repo: CatDurian/sticker-site
+  fqdn: durian.tiantian.codes

@@ -9,7 +9,8 @@
     "build_png": "rimraf png && mkdirp png && node scripts/build_png.js",
     "compress": "rimraf png-compressed && mkdirp png-compressed && pngquant --speed 1 png/*.png && cpx \"png/*-fs8.png\" png-compressed && rimraf png/*-fs8.png",
     "zip": "node scripts/zip.js",
-    "pack": "npm run build_png && npm run compress && npm run zip"
+    "pack": "npm run build_png && npm run compress && npm run zip",
+    "site": "node scripts/generate_site.js"
   },
   "devDependencies": {
     "cpx": "^1.5.0",
@@ -20,6 +21,7 @@
     "rimraf": "^2.6.2"
   },
   "dependencies": {
+    "md5-file": "^3.2.3",
     "psd": "^3.2.0"
   }
 }
