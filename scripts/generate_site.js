@@ -11,7 +11,10 @@ const size = 256
 
 let html = `
 <meta charset="UTF-8">
-<title>可爱的榴莲</title>
+<head>
+    <title>可爱的榴莲</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+</head>
 <style>
     body {
         background-color: #eee;

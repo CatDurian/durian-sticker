@@ -10,7 +10,7 @@
     "compress": "rimraf png-compressed && mkdirp png-compressed && pngquant --speed 1 png/*.png && cpx \"png/*-fs8.png\" png-compressed && rimraf png/*-fs8.png",
     "zip": "node scripts/zip.js",
     "pack": "npm run build_png && npm run compress && npm run zip",
-    "site": "node scripts/generate_site.js"
+    "site": "node scripts/generate_site.js && cp favicon.ico png-compressed/"
   },
   "devDependencies": {
     "cpx": "^1.5.0",
